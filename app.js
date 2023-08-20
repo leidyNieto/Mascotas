@@ -8,7 +8,7 @@ const port = config.get("server-port");
 
 /**Methods */
 app.get("/", (req, res, next) =>{
-    res.send("Welcome to Mascotas");
+    res.send("Welcome to Mascotas.");
 });
 
 const controller = require("./controller/logic/mascotas.controller");
