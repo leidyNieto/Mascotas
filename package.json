@@ -2,7 +2,7 @@
   "name": "mascotas",
   "version": "1.0.0",
   "description": "Proyecto de Api rest de la clase mascotas de prog3",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "config": "^3.3.9",
+    "crypto-js": "^4.1.1",
     "express": "^4.18.2",
-    "mongoose": "^7.4.3"
+    "mongoose": "^7.4.3",
+    "mongoose-unique-validator": "^4.0.0"
   }
 }

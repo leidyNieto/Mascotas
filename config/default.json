@@ -6,5 +6,9 @@
             "pasword":"rLvMqNQFpdWlvuXq",
             "dbname":"PetsDB"
         }
-    }
+    },
+    "secretKeys":{
+        "cryptojs":"4neh79QCKw"
+    },
+    "server-port": 3000
 }
