@@ -7,5 +7,5 @@ const app = express();
 const port = config.get("server-port");
 
 app.listen(port, () => {
-console.log("server is running...")
+console.log("Server is running...")
 });

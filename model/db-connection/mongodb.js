@@ -1,12 +1,9 @@
 /* pakages */
 
-// user: acad_rest_api_user
-// pasword: rLvMqNQFpdWlvuXq
-
 const mongoose = require("mongoose");
 const config = require("config");
 
-const mongodbInfo = config.get("db-connections.mongodb")
+const mongodbInfo = config.get("db-connections.mongodb");
 
 const connStr = `mongodb+srv://${mongodbInfo.user}:${mongodbInfo.pasword}@${mongodbInfo.host}/${mongodbInfo.dbname}?retryWrites=true&w=majority`
 

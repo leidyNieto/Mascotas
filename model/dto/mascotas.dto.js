@@ -11,16 +11,16 @@ schema.statics = {
         doc.save(cb);
     },
     getAll: function(query ,cb){
-        doc.find(query, cb);
+        this.find(query, cb);
     },
     getByCode: function(query ,cb){
-        doc.find(query, cb);
+        this.find(query, cb);
     },
     update: function(query, data, cb){
-        this.findOneAndUpdate(query, {$set: data}, {new: true}, cd);
+        this.findOneAndUpdate(query, {$set: data}, {new: true}, cb);
     },
     delete: function(query,cb){
-        this.findOneAndDelete(query);
+        this.findOneAndDelete(query, cb);
     }
 };
 
