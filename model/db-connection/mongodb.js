@@ -5,7 +5,7 @@ const config = require("config");
 
 const mongodbInfo = config.get("db-connections.mongodb");
 
-const connStr = `mongodb+srv://${mongodbInfo.user}:${mongodbInfo.pasword}@${mongodbInfo.host}`
+const connStr = `mongodb+srv://${mongodbInfo.user}:${mongodbInfo.pasword}@${mongodbInfo.host}${mongodbInfo.dbname}`
 
 module.exports= () => {
     mongoose.connect(connStr);
