@@ -1,10 +1,10 @@
 {
     "db-connections":{
         "mongodb":{
-            "host":"cluster0.dmuf3oe.mongodb.net",
-            "user":"acad_rest_api_user",
-            "pasword":"rLvMqNQFpdWlvuXq",
-            "dbname":"PetsDB"
+            "host":"cluster0.8bedokk.mongodb.net/",
+            "user":"jeronimogarcia26502",
+            "pasword":"jeronimo_cluster23",
+            "dbname":"MascotasDB"
         }
     },
     "secretKeys":{

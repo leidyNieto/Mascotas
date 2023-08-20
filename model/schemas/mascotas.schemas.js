@@ -58,6 +58,11 @@ const mascotasSchema = new mongoose.Schema({
     peso:{
         type: "Number",
         required: true
+    },
+
+    numero_dueño:{
+        type: "Number",
+        required: true
     }
 });
 
