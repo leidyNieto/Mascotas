@@ -1,10 +1,8 @@
 /* Dto */
 const mascotasdto = require("../../model/dto/mascotas.dto");
-const mascotadto = require("../../model/dto/mascota.dto");
 
 /* Helper */
 const helper = require("../helpers/general.helper")
-
 
 exports.createMascotas = (req,res,next) => {
   let mascotas = {
