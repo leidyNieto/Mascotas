@@ -5,27 +5,26 @@ const config = require("config");
 
 const mongodbInfo = config.get("db-connections.mongodb");
 
-const connStr = `mongodb+srv://${mongodbInfo.user}:${mongodbInfo.pasword}@${mongodbInfo.host}${mongodbInfo.dbname}`
+const connStr = `mongodb+srv://${mongodbInfo.user}:${mongodbInfo.pasword}@${mongodbInfo.host}${mongodbInfo.dbname}`;
 
-module.exports= () => {
-    mongoose.connect(connStr);
+module.exports = () => {
+  mongoose.connect(connStr);
 
-    mongoose.connection.on("connected", () => {
-        console.log("mongodb server connected!")
+  mongoose.connection.on("connected", () => {
+    console.log("mongodb server connected!");
+  });
+
+  mongoose.connection.on("disconnected", () => {
+    console.log("mongodb server disconnected!");
+  });
+
+  mongoose.connection.on("error", () => {
+    console.log("mongodb server connected! error");
+  });
+
+  mongoose.connection.on("SIGINT", () => {
+    mongoose.connection.close(() => {
+      console.log("mongodb server shutting down!");
     });
-
-    mongoose.connection.on("disconnected", () => {
-        console.log("mongodb server disconnected!")
-    });
-
-    mongoose.connection.on("error", () => {
-        console.log("mongodb server connected! error")
-    });
-
-    mongoose.connection.on("SIGINT", () => {
-        mongoose.connection.close(() => {
-            console.log("mongodb server shutting down!")
-        });  
-    });
-
+  });
 };

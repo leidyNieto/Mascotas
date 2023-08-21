@@ -1,0 +1,12 @@
+API REST Mascotas
+
+Se realizó la estructuración de la app creando las respectivas carpetas donde irán los archivos 
+correspondientes, la carpeta Model para realizar el modelo de Schema, data Access y conexión con
+mongo para la clase mascotas, se realizó un apartado de Config para lograr datos de utilidad como
+acceso a base de datos, entro otros datos de valor.
+
+Se realizó el DTO para lograr las funciones que irán incorporadas para realizar el Crud 
+respectivo a mascotas, también se crearon los controladores donde se realizara la creación, 
+obtención y actualización y eliminación de los datos que pueda contener mascotas, por último la 
+creación de app y rutas para lograr la realización de los test, por medio de la aplicación 
+Postman.

@@ -1,14 +1,14 @@
 {
-    "db-connections":{
-        "mongodb":{
-            "host":"cluster0.8bedokk.mongodb.net/",
-            "user":"jeronimogarcia26502",
-            "pasword":"jeronimo_cluster23",
-            "dbname":"MascotasDB"
-        }
-    },
-    "secretKeys":{
-        "cryptojs":"4neh79QCKw"
-    },
-    "server-port": 3000
+  "db-connections": {
+    "mongodb": {
+      "host": "cluster0.klgchuq.mongodb.net/",
+      "user": "api_rest_user",
+      "pasword": "K5cDfLNlU3xOueQN",
+      "dbname": "MascotasDB"
+    }
+  },
+  "secretKeys": {
+    "cryptojs": "4neh79QCKw"
+  },
+  "server-port": 3000
 }

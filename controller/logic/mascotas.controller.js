@@ -1,9 +1,9 @@
 /* Dto */
 const mascotasdto = require("../../model/dto/mascotas.dto");
+const config = require("config");
 
 /* Helper */
-const helper = require("../helpers/general.helper")
-const notificationHelper = require("../helpers/notification.helper")
+const notificationHelper = require("../helpers/notification.helper");
 
 exports.createMascotas = async (req, res, next) => {
   try {
@@ -19,14 +19,19 @@ exports.createMascotas = async (req, res, next) => {
       fecha_nacimiento: req.body.fecha_nacimiento,
       vacunado: req.body.vacunado,
       peso: req.body.peso,
-      numero_dueño: req.body.numero_dueño
+      numero_dueño: req.body.numero_dueño,
     };
-    
+
+    // Llama a mascotasdto.create y espera a que se complete
     const data = await mascotasdto.create(mascotas);
-        notificationHelper.sendSMS(mascotas.numero_dueño);
+
+    // Luego de que los datos se guarden correctamente, envía la respuesta
+    // Envía los datos en la respuesta con el código 201 (Creado)
     res.status(201).json({ info: data });
+
+    notificationHelper.sendSMS(mascotas.numero_dueño);
   } catch (err) {
-    res.status(400).json({ error: err });
+    res.status(400).json({ error: err.message });
   }
 };
 
@@ -44,7 +49,7 @@ exports.updateMascotas = async (req, res, next) => {
       fecha_nacimiento: req.body.fecha_nacimiento,
       vacunas: req.body.vacunas,
       peso: req.body.peso,
-      numero_dueño: req.body.numero_dueño
+      numero_dueño: req.body.numero_dueño,
     };
 
     const data = await mascotasdto.update({ _id: req.body.id }, mascotas);
@@ -57,9 +62,10 @@ exports.updateMascotas = async (req, res, next) => {
 exports.getAll = async (req, res, next) => {
   try {
     const data = await mascotasdto.getAll({});
+    console.log("entro",data)
     res.status(200).json({ info: data });
   } catch (err) {
-        res.status(400).json({ error: err });
+    res.status(400).json({ error: err });
   }
 };
 
