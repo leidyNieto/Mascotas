@@ -21,9 +21,9 @@ exports.createMascotas = async (req, res, next) => {
       peso: req.body.peso,
       numero_dueño: req.body.numero_dueño
     };
-
+    
     const data = await mascotasdto.create(mascotas);
-    notificationHelper.sendSMS(mascotas.numero_dueño);
+        notificationHelper.sendSMS(mascotas.numero_dueño);
     res.status(201).json({ info: data });
   } catch (err) {
     res.status(400).json({ error: err });
@@ -59,7 +59,7 @@ exports.getAll = async (req, res, next) => {
     const data = await mascotasdto.getAll({});
     res.status(200).json({ info: data });
   } catch (err) {
-    res.status(400).json({ error: err });
+        res.status(400).json({ error: err });
   }
 };
 

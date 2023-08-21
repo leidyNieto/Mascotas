@@ -9,7 +9,7 @@ db();
 schema.statics = {
     create: function(data ,cb){
         let doc = new this(data);
-        doc.save(cb);
+                doc.save(cb);
     },
     getAll: function(query ,cb){
         this.find(query, cb);

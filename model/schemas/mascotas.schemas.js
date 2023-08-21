@@ -30,7 +30,7 @@ const mascotasSchema = new mongoose.Schema({
         required: true
     },
 
-    estelirizado:{
+    esterilizado:{
         type: "Boolean",
         required: true
     },
